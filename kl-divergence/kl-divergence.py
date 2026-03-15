@@ -6,6 +6,7 @@ def kl_divergence(p, q, eps=1e-12):
     """
     p = np.asarray(p)
     q= np.asarray(q)
-    term1 = np.log(p/(q+eps))
-    ans = np.sum(p*term1)
+    mask = p>0
+    term1 = np.log(p[mask]/(q[mask]+eps))
+    ans = np.sum(p[mask]*term1)
     return ans
