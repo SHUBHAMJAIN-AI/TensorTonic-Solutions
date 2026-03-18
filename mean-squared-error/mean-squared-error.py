@@ -10,4 +10,4 @@ def mean_squared_error(y_pred, y_true):
     if y_pred.shape != y_true.shape:
         return None
     loss = np.mean((y_pred-y_true)**2)
-    return loss
+    return float(loss)
